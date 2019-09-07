@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "./../../components/Navbar";
 import HomePage from "./../home";
-import AboutPage from "./../about";
+import ARDemo from "./../ar-demo";
 import FaqPage from "./../faq";
 import PricingPage from "./../pricing";
 import ContactPage from "./../contact";
@@ -30,7 +30,7 @@ function App(props) {
           <Switch>
             <Route exact path="/" component={HomePage} />
 
-            <Route exact path="/about" component={AboutPage} />
+            <Route exact path="/ar-demo" component={ARDemo} />
 
             <Route exact path="/faq" component={FaqPage} />
 

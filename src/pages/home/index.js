@@ -28,14 +28,14 @@ function HomePage(props) {
       <TeamBiosSection2
         color="white"
         size="medium"
-        title="Meet the Team"
+        title="Found an injured animal or want more info?"
         subtitle=""
       />
       <FeaturesSection
         color="white"
         size="medium"
-        title="Features"
-        subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud."
+        title="Look out for our QWild Cards!"
+        subtitle="QWild Cards can be found around Queensland. Explore your local area and learn more about the wildlife you share your backyard with."
       />
       <ContactSection
         color="white"

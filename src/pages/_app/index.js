@@ -14,6 +14,8 @@ import { Switch, Route, Router } from "./../../util/router.js";
 import Footer from "./../../components/Footer";
 import analytics from "./../../util/analytics.js";
 import { ProvideAuth } from "./../../util/auth.js";
+import Logo from "../../image/qwild-logo.png";
+
 import "./styles.scss";
 
 function App(props) {
@@ -24,7 +26,7 @@ function App(props) {
           <Navbar
             color="white"
             spaced={true}
-            logo="https://uploads.divjoy.com/logo.svg"
+            logo={Logo}
           />
 
           <Switch>
@@ -69,8 +71,8 @@ function App(props) {
           <Footer
             color="light"
             size="normal"
-            logo="https://uploads.divjoy.com/logo.svg"
-            copyright="© 2019 Company"
+            logo={Logo}
+            copyright="© Big Sunday - 2019 GovHack"
           />
         </>
       </Router>

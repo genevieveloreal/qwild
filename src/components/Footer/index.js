@@ -13,7 +13,6 @@ function Footer(props) {
           </Link>
         </div>
         <div className="links right">
-          <Link to="/about">About</Link>
           <Link to="/faq">FAQ</Link>
           <Link to="/contact">Contact</Link>
         </div>

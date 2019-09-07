@@ -14,6 +14,7 @@ function Features(props) {
               {item.title}
             </h3>
             <p className="subtitle">{item.description}</p>
+            <a class="button is-primary is-medium is-normal" href={item.buttonLink}>{item.buttonText}</a>
           </div>
           <div className="column">
             <figure className="Features__image image">

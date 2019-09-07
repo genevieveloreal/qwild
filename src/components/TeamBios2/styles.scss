@@ -9,3 +9,50 @@
 .TeamBios2__details {
   margin-top: 20px;
 }
+
+#purple {
+  color: #6c63ff;
+}
+
+p#purple {
+  color: #6c63ff;
+}
+
+.lang-container {
+  margin-top: 30px;
+}
+
+.lang {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.lang button {
+  margin-right: 10px;
+  text-align: center;
+}
+
+h2.lang-h2 {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.center {
+  text-align: center;
+}
+
+.center p {
+  margin-bottom: 20px
+}
+
+img.is-rounded { transition: all .2s ease-in-out; }
+
+img.is-rounded:hover { transform: scale(1.1); }
+
+button.margin-top {
+  margin-top: 10px;
+}

@@ -40,8 +40,8 @@ function HomePage(props) {
       <ContactSection
         color="white"
         size="medium"
-        title="Contact Us"
-        subtitle=""
+        title="Report a wildlife sighting"
+        subtitle="Spotted wildlife in your area? Let us know & help us maintain accurate data"
         showNameField={true}
         buttonText="Send message"
       />

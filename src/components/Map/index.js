@@ -3,6 +3,7 @@ import {Component} from 'react';
 import mapboxgl from "mapbox-gl";
 import Data from "../../data/City_of_Gold_Coast__Fauna.geojson";
 import Icon from "../../data/icon.png";
+import LoadingGif from "../../data/Double Ring-0.9s-45px.gif";
 
 class Map extends Component {
 
@@ -22,7 +23,7 @@ class Map extends Component {
       container: 'map',
       style: 'mapbox://styles/mapbox/light-v10',
       center: [153.4000, -28.0167],
-      zoom: 8
+      zoom: 12
     });
 
     this.drawData();
@@ -50,10 +51,10 @@ class Map extends Component {
 
       let popup = new mapboxgl.Popup({
         closeButton: false,
-        closeOnClick: false
+        closeOnClick: true
       });
 
-      this.on("mouseenter", "animals", function (e) {
+      this.on("click", "animals", function (e) {
         // Change the cursor style as a UI indicator.
         this.getCanvas().style.cursor = 'pointer';
 
@@ -70,20 +71,13 @@ class Map extends Component {
         // Populate the popup and set its coordinates
         // based on the feature found.
         popup.setLngLat(coordinates)
-          .setHTML(description)
+          .setHTML(_this.renderLoadingTooltip(description))
           .addTo(this);
 
-      });
-
-      this.on("click", "animals", function(e){
-        let description = e.features[0].properties.COMMONNAME;
         _this.fetchWildNetData(description, popup);
+
       });
 
-      this.on("mouseleave", "animals", function(){
-        this.getCanvas().style.cursor = '';
-        popup.remove();
-      })
     });
   }
 
@@ -99,13 +93,63 @@ class Map extends Component {
               .then((species) => {
                 console.log(species);
 
-                popup.setHTML(species.Species.ScientificName)
+                popup.setHTML(this.renderToolTip(species.Species))
               })
+          }
+          else {
+            popup.setHTML(this.renderToolTipNoData(species))
           }
         })
     // Fetch individual taxon
 
     // return html data
+  }
+
+  renderToolTip(species) {
+
+    let endemic = species.Endemicity === "N" ? "Natural" : "Introduced";
+    let imageurl;
+    if (typeof species.Image !== "undefined") {
+      if (species.Image.length > 1) {
+        imageurl = `<img src="${species.Image[0].URL}" />`;
+      }
+      else {
+        imageurl = `<img src="${species.Image.URL}" />`;
+      }
+    }
+    else {
+      imageurl = `<span></span>`;
+    }
+
+    return (
+      `<div class="qw-tooltip">
+        ${imageurl}
+        <p class="qw-tooltip--title" style="text-transform:capitalize; font-weight:bold;">${species.AcceptedCommonName}</p>
+        <p class="italics" style="font-style:italic">${species.ScientificName}</p>
+        <p>Endemicity: ${endemic}</p>
+        <p>Pest status: ${species.PestStatus} </p>
+      </div>`
+    )
+
+  }
+
+  renderLoadingTooltip(description) {
+    return (
+      `<div class="qw-tooltip qw-tooltip--loading">
+            <p class="qw-tooltip--title">${description}</p>
+            <img src="${LoadingGif}" />
+            <p>Fetching additional information<br/>Powered by QLD WildNet</p>
+        </div>`
+    )
+  }
+
+  renderToolTipNoData(description) {
+    return (
+    `<div class="qw-tooltip qw-tooltip--loading">
+            <p class="qw-tooltip--title">${description}</p>
+            <p>No WildNet Data Found</p>
+        </div>`
+    )
   }
 
   render() {

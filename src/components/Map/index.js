@@ -1,7 +1,8 @@
 import React from "react";
 import {Component} from 'react';
 import mapboxgl from "mapbox-gl";
-
+import Data from "../../data/City_of_Gold_Coast__Fauna.geojson";
+import Icon from "../../data/icon.png";
 
 class Map extends Component {
 
@@ -32,9 +33,9 @@ class Map extends Component {
     let _this = this;
     this.map.on('load',function(){
       let _map = this;
-      let url = './../data/City_of_Gold_Coast__fauna.geojson';
+      let url = Data;
       this.addSource('source_id', {type: 'geojson', data: url});
-      this.loadImage('./../data/icon.png', function(error, image){
+      this.loadImage(Icon, function(error, image){
         _map.addImage('marker-ico', image);
       });
 

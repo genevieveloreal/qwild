@@ -2,6 +2,14 @@ import React from "react";
 import Section from "./../Section";
 import SectionHeader from "./../SectionHeader";
 import TeamBios2 from "./../TeamBios2";
+import Bird from "../../image/bird.jpg";
+import CarpetSnake from "../../image/carpetsnake.jpg";
+import Dingo from "../../image/dingo.jpg";
+import Kangaroo from "../../image/kangaroo.jpg";
+import Koala from "../../image/koala.jpg";
+import Possum from "../../image/possum.jpg";
+import SugarGlider from "../../image/sugarglider.jpg";
+import Wallaby from "../../image/wallaby.jpg";
 import "./styles.scss";
 
 function TeamBiosSection2(props) {
@@ -17,44 +25,68 @@ function TeamBiosSection2(props) {
         <TeamBios2
           people={[
             {
-              avatar: "https://uploads.divjoy.com/pravatar-150x-68.jpeg",
-              name: "John Smith",
-              role: "CEO"
+              avatar: Bird,
+              name: "Bird",
+              yugara: "Juwanbin",
+              yugarabul: "Juwahnduwan",
+              yugambeh: "Noangbil",
+              turubul: "Juwahnduwan"
             },
             {
-              avatar: "https://uploads.divjoy.com/pravatar-150x-35.jpeg",
-              name: "Lisa Zinn",
-              role: "CTO"
+              avatar: Koala,
+              name: "Koala",
+              yugara: "Dumbirrbi",
+              yugarabul: "Marrambi",
+              yugambeh: "Borobi",
+              turubul: "Dumbirrbi"
             },
             {
-              avatar: "https://uploads.divjoy.com/pravatar-150x-16.jpeg",
-              name: "Diana Low",
-              role: "Designer"
+              avatar: Wallaby,
+              name: "Wallaby",
+              yugara: "Garril",
+              yugarabul: "Garril",
+              yugambeh: "Karil",
+              turubul: "Garril"
             },
             {
-              avatar: "https://i.pravatar.cc/150?img=5",
-              name: "Niomi Clay",
-              role: "Software Engineer"
+              avatar: CarpetSnake,
+              name: "Carpet Snake",
+              yugara: "Kabul",
+              yugarabul: "Kabul",
+              yugambeh: "Kabul",
+              turubul: "Kabul"
             },
             {
-              avatar: "https://i.pravatar.cc/150?img=6",
-              name: "Tim Wesley",
-              role: "Software Engineer"
+              avatar: Possum,
+              name: "Possum",
+              yugara: "Kubbi",
+              yugarabul: "Kubbi",
+              yugambeh: "Guran",
+              turubul: "Kubbi"
             },
             {
-              avatar: "https://i.pravatar.cc/150?img=7",
-              name: "Shawn David",
-              role: "Marketing"
+              avatar: SugarGlider,
+              name: "Sugar Glider",
+              yugara: "Chibur",
+              yugarabul: "Chibur",
+              yugambeh: "Jiburr",
+              turubul: "Chibur"
             },
             {
-              avatar: "https://i.pravatar.cc/150?img=8",
-              name: "Ian Gold",
-              role: "Marketing"
+              avatar: Dingo,
+              name: "Wild Dog",
+              yugara: "Mirri",
+              yugarabul: "Mirri",
+              yugambeh: "Ngurun",
+              turubul: "Mirri"
             },
             {
-              avatar: "https://i.pravatar.cc/150?img=10",
-              name: "Ali Pine",
-              role: "Software Engineer"
+              avatar: Kangaroo,
+              name: "Kangaroo",
+              yugara: "Barrar",
+              yugarabul: "Burrar",
+              yugambeh: "Muni",
+              turubul: "Gurooman"
             }
           ]}
         />

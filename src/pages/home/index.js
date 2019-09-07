@@ -28,28 +28,28 @@ function HomePage(props) {
       <TeamBiosSection2
         color="white"
         size="medium"
-        title="Meet the Team"
+        title="Found an injured animal or want more info?"
         subtitle=""
       />
       <FeaturesSection
         color="white"
         size="medium"
-        title="Features"
-        subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud."
+        title="Look out for our QWild Cards!"
+        subtitle="QWild Cards can be found around Queensland. Explore your local area and learn more about the wildlife you share your backyard with."
       />
       <ContactSection
         color="white"
         size="medium"
-        title="Contact Us"
-        subtitle=""
+        title="Report a wildlife sighting"
+        subtitle="Spotted wildlife in your area? Let us know & help us maintain accurate data"
         showNameField={true}
-        buttonText="Send message"
+        buttonText="Lodge Wildlife Report"
       />
       <NewsletterSection
         color="white"
         size="medium"
         title="Stay in the know"
-        subtitle="Receive our latest articles and feature updates"
+        subtitle="Receive our latest articles, animal facts and updates"
         buttonText="Subscribe"
         inputPlaceholder="Enter your email"
         subscribedMessage="You are now subscribed!"

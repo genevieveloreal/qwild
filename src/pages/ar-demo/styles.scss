@@ -1,0 +1,19 @@
+#container {
+    margin : 0px;
+    overflow: hidden;
+}
+
+#arjsDebugUIContainer {
+    display: none;
+}
+
+#backButton {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    min-width: 50px;
+    min-height: 30px;
+    padding-right: 5%;
+    padding-top: 4%;
+    border: none;
+}

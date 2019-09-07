@@ -43,13 +43,13 @@ function HomePage(props) {
         title="Report a wildlife sighting"
         subtitle="Spotted wildlife in your area? Let us know & help us maintain accurate data"
         showNameField={true}
-        buttonText="Send message"
+        buttonText="Lodge Wildlife Report"
       />
       <NewsletterSection
         color="white"
         size="medium"
         title="Stay in the know"
-        subtitle="Receive our latest articles and feature updates"
+        subtitle="Receive our latest articles, animal facts and updates"
         buttonText="Subscribe"
         inputPlaceholder="Enter your email"
         subscribedMessage="You are now subscribed!"

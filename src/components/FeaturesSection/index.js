@@ -3,6 +3,7 @@ import Section from "./../Section";
 import SectionHeader from "./../SectionHeader";
 import Features from "./../Features";
 import QWildImage from "./../../image/qwild-phone.jpg";
+import QWildLearnMore from "./../../image/qwild-learn-more.jpg";
 import "./styles.scss";
 
 function FeaturesSection(props) {
@@ -24,6 +25,14 @@ function FeaturesSection(props) {
               image: QWildImage,
               buttonText: "Scan QWild Card...",
               buttonLink: "http://ivanvonchrist.github.io/ar-demo"
+            },
+            {
+              title: "Want to know more?",
+              description:
+                "Want to find out more about QWild, or know how you can help? We've got you covered.",
+              image: QWildLearnMore,
+              buttonText: "Go to FAQ",
+              buttonLink: "/faq"
             }
           ]}
         />

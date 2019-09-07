@@ -1,10 +1,10 @@
 import React from "react";
-import HeroSection from "./../../components/HeroSection";
 import ClientsSection from "./../../components/ClientsSection";
 import TeamBiosSection2 from "./../../components/TeamBiosSection2";
 import FeaturesSection from "./../../components/FeaturesSection";
 import ContactSection from "./../../components/ContactSection";
 import NewsletterSection from "./../../components/NewsletterSection";
+import Map from "./../../components/Map";
 import { useRouter } from "./../../util/router.js";
 import "./styles.scss";
 
@@ -13,17 +13,7 @@ function HomePage(props) {
 
   return (
     <>
-      <HeroSection
-        color="white"
-        size="medium"
-        title="QWild"
-        subtitle="Subheading can go here..."
-        buttonText="Get Started"
-        image="https://uploads.divjoy.com/undraw-japan_ubgk.svg"
-        buttonOnClick={() => {
-          router.push("/pricing");
-        }}
-      />
+      <Map/>
       <ClientsSection color="light" size="normal" title="" subtitle="" />
       <TeamBiosSection2
         color="white"

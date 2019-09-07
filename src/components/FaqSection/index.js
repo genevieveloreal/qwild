@@ -17,29 +17,29 @@ function FaqSection(props) {
         <Faq
           items={[
             {
-              question: "Integer ornare neque mauris?",
+              question: "What is QWild?",
               answer:
-                "Integer ornare neque mauris, ac vulputate lacus venenatis et. Pellentesque ut ultrices purus. Suspendisse ut tincidunt eros. In velit mi, rhoncus dictum neque a, tincidunt lobortis justo."
+                "QWild is an prototype React Web App for GovHack 2019, utilising various datasets to provide a proof of concept."
             },
             {
-              question: "Lorem ipsum dolor sit amet?",
+              question: "What does QWild do?",
               answer:
-                "Nunc nulla mauris, laoreet vel cursus lacinia, consectetur sit amet tellus. Suspendisse ut tincidunt eros. In velit mi, rhoncus dictum neque a, tincidunt lobortis justo."
+                "Queensland is known for its variety of wildlife and with temperatures increasing and 60% of Queensland in drought, local wildlife volunteer groups come under strain, especially when some calls could be avoided if people had the right information. QWild aims to help Queensland residents on local wildlife in their area and provide care instructions / contact numbers incase they come across an injured animal."
             },
             {
-              question: "Suspendisse ut tincidunt?",
+              question: "How can I help?",
               answer:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lobortis, metus et mattis ullamcorper. Suspendisse ut tincidunt eros. In velit mi, rhoncus dictum neque a, tincidunt lobortis justo."
+                "You can help by using our online resources to learn more about the variety of species you share your backyard with, by watching out for signs of illness or injury in wild animals, helping us preserve natural habits by disposing of rubbish responsibly and reporting injured wildlife to the relevant organisations."
             },
             {
-              question: "Ut enim ad minim veniam?",
+              question: "Where can I find more information?",
               answer:
                 "Suspendisse ut tincidunt eros. In velit mi, rhoncus dictum neque a, tincidunt lobortis justo."
             },
             {
-              question: "In velit mi, rhoncus dictum neque?",
+              question: "I've found an injured or distressed animal. What should I do?",
               answer:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud."
+                "If you come across an injured animal, clear the area of immediate danger. Try to create a space around the animal free of animals and people. Contact the appropriate authority, either RSPCA Queensland on 1300 ANIMAL (1300 264 625) or Queensland Parks and Wildlife Service on 1300 130 372. Try to stay with the animal until help is near as long as it is safe to do so."
             }
           ]}
         />

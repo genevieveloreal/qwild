@@ -2,6 +2,11 @@ import React from "react";
 import Section from "./../Section";
 import SectionHeader from "./../SectionHeader";
 import Clients from "./../Clients";
+import GoldCoastLogo from "../../image/gccc-logo.png";
+import GovHackLogo from "../../image/govhack-logo.png";
+import BrisbaneLogo from "../../image/bcc-logo.png";
+import LoganLogo from "../../image/lcc-logo.png";
+import QueenslandLogo from "../../image/qgov-logo.png";
 import "./styles.scss";
 
 function ClientsSection(props) {
@@ -17,24 +22,29 @@ function ClientsSection(props) {
         <Clients
           items={[
             {
-              name: "Instagram",
-              image: "https://uploads.divjoy.com/logo-instagram.svg",
+              name: "Queensland Government",
+              image: QueenslandLogo,
+              width: "60px"
+            },
+            {
+              name: "Gold Coast City Council",
+              image: GoldCoastLogo,
+              width: "135px"
+            },
+            {
+              name: "Brisbane City Council",
+              image: BrisbaneLogo,
               width: "150px"
             },
             {
-              name: "Slack",
-              image: "https://uploads.divjoy.com/logo-slack.svg",
-              width: "135px"
+              name: "Logan City Council",
+              image: LoganLogo,
+              width: "220px"
             },
             {
-              name: "Tinder",
-              image: "https://uploads.divjoy.com/logo-tinder.svg",
+              name: "GovHack",
+              image: GovHackLogo,
               width: "90px"
-            },
-            {
-              name: "Spotify",
-              image: "https://uploads.divjoy.com/logo-spotify.svg",
-              width: "135px"
             }
           ]}
         />

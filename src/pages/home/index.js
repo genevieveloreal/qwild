@@ -7,13 +7,16 @@ import NewsletterSection from "./../../components/NewsletterSection";
 import Map from "./../../components/Map";
 import { useRouter } from "./../../util/router.js";
 import "./styles.scss";
+import MapSearch from "../../components/MapSearch";
 
 function HomePage(props) {
   const router = useRouter();
 
   return (
     <>
-      <Map/>
+      <div id={"mapContainer"}>
+        <Map/>
+      </div>
       <ClientsSection color="light" size="normal" title="" subtitle="" />
       <TeamBiosSection2
         color="white"

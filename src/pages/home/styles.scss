@@ -57,3 +57,11 @@
     display: none;
   }
 }
+
+@media screen and (max-width: 640px) {
+  .map-search {
+    position: initial;
+    width:100%;
+    height:auto;
+  }
+}

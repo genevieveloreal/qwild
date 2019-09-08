@@ -2,7 +2,9 @@ import React from "react";
 import {Component} from 'react';
 import mapboxgl from "mapbox-gl";
 import Data from "../../data/City_of_Gold_Coast__Fauna.geojson";
+import KoalaData from "../../data/koalas_2018.geojson";
 import Icon from "../../data/icon.png";
+import KoalaIcon from "../../data/koala-icon-40px.png";
 import LoadingGif from "../../data/Double Ring-0.9s-45px.gif";
 
 class Map extends Component {
@@ -27,6 +29,7 @@ class Map extends Component {
     });
 
     this.drawData();
+    this.drawKoalas();
   }
 
   drawData() {
@@ -79,6 +82,60 @@ class Map extends Component {
       });
 
     });
+  }
+
+  drawKoalas() {
+    let hoverStateId = null;
+    this.map.on('load', function(){
+      let _map = this;
+      let url = KoalaData;
+      this.addSource('koalas', {type: 'geojson', data: url})
+      this.loadImage(KoalaIcon, function(error, image) {
+        _map.addImage('koala-ico', image)
+      });
+
+      this.addLayer({
+        "id":"koalas",
+        "type":"symbol",
+        "source":"koalas",
+        "layout": {
+          "icon-image":"koala-ico"
+        }
+      });
+
+      let kpopup = new mapboxgl.Popup({
+        closeButton: false,
+        closeOnClick: false
+      });
+
+      this.on("mouseenter", "koalas", function (e) {
+        // Change the cursor style as a UI indicator.
+        this.getCanvas().style.cursor = 'pointer';
+
+        let coordinates = e.features[0].geometry.coordinates.slice();
+        let description = e.features[0].properties.COMMONNAME;
+
+        // Ensure that if the map is zoomed out such that multiple
+        // copies of the feature are visible, the popup appears
+        // over the copy being pointed to.
+        while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+          coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+        }
+
+        // Populate the popup and set its coordinates
+        // based on the feature found.
+        kpopup.setLngLat(coordinates)
+          .setHTML("Koala Sighted at <br/>"+ e.features[0].properties.LocalityDetails)
+          .addTo(this);
+
+
+      });
+
+      this.on('mouseleave', 'places', function() {
+        _map.getCanvas().style.cursor = '';
+        kpopup.remove();
+      });
+    })
   }
 
   fetchWildNetData(species, popup) {

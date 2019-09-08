@@ -1,3 +1,23 @@
 .navbar-item img {
     max-height: 80px;
 }
+
+a.navbar-item {
+    transition: all 0.2s;
+}
+
+a.navbar-item.contact-button {
+    background-color: #6c63ff!important;
+    color: #fff!important;
+    margin-left: 15px;
+}
+
+a.navbar-item.contact-button:hover {
+    background-color: #00d1b2!important;
+    color: #fff!important;
+}
+
+a.navbar-item:hover {
+    color: #00d1b2!important;
+    background-color: rgba(255,255,255,0)!important;
+}

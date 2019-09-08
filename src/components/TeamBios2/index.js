@@ -38,7 +38,7 @@ class TeamBios2 extends React.Component {
           <div className="column is-one-quarter has-text-centered" key={index}>
             <div className="TeamBios2__person">
               <div className="TeamBios2__avatar-wrapper">
-                <a href="#">
+                <a href="/faq-animal">
                   <Avatar image={person.avatar} size={128} alt={person.name} />
                 </a>
               </div>
@@ -56,9 +56,9 @@ class TeamBios2 extends React.Component {
                 { this.state.language === "Turubul" &&
                   <p className="is-size-6 has-text-weight-semibold" id="purple">{person.turubul}</p>
                 }
-                <button className="button is-primary is-small margin-top">
+                <a href="/faq-animal" className="button is-primary is-small is-normal margin-top">
                   View more
-                </button>
+                </a>
               </div>
             </div>
           </div>

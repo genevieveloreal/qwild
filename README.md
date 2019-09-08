@@ -36,7 +36,7 @@ QWild will encourage residents to learn more about the world around them and the
 # Technical Information
 
 ## AR Demo
-Please note that the AR Demo for this project is located in [this repo](https://ivanvonchrist.github.com/ar-demo)
+Please note that the AR Demo for this project is located in [this repo](https://github.com/ivanvonchrist/ar-demo)
 
 ## Available Scripts
 

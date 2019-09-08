@@ -7,16 +7,6 @@ import LoadingGif from "../../data/Double Ring-0.9s-45px.gif";
 
 class Map extends Component {
 
-  state = {
-    viewport: {
-      width: "100%",
-      height: 400,
-      latitude: -28.0167,
-      longitude: 153.4000,
-      zoom: 8
-    }
-  };
-
   componentDidMount() {
     mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_API_TOKEN;
     this.map = new mapboxgl.Map({

@@ -25,6 +25,17 @@
   padding:0 10px;
   white-space: pre;
 
+  .item-loading {
+    display: none;
+  }
+
+  &.show-loading {
+    .item-loading {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
   &:hover {
     background: #ccc;
   }
@@ -35,4 +46,14 @@
   position: absolute;
   right:0;
   z-index: 1000;
+}
+
+.icon-name {
+  text-transform: capitalize;
+}
+
+.mapboxgl-popup {
+  .item-loading {
+    display: none;
+  }
 }

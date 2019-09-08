@@ -124,7 +124,7 @@ class Map extends Component {
 
       });
 
-      this.on('mouseleave', 'places', function() {
+      this.on('mouseleave', 'koalas', function() {
         _map.getCanvas().style.cursor = '';
         kpopup.remove();
       });
@@ -155,19 +155,53 @@ class Map extends Component {
     // return html data
   }
 
+  fetchWildNetDataByID(id,name, popup) {
+    let url =`https://cors-anywhere.herokuapp.com/https://apps.des.qld.gov.au/species/?op=getspeciesbyid&taxonid=${id}`;
+    // Fetch speciessearch via name.
+    fetch(url, {headers: {'origin': 'http://localhost'}, mode:'cors'})
+      .then(res => res.json())
+      .then((result) => {
+        if (result.Species.length > 0) {
+          fetch('https://cors-anywhere.herokuapp.com/'+ result.Species[0].SpeciesProfileUrl, {headers:{'origin':'http://localhost'}})
+            .then(res => res.json())
+            .then((species) => {
+              console.log(species);
+
+              popup.setHTML(this.renderToolTip(id.Species))
+            })
+        }
+        else {
+          popup.setHTML(this.renderToolTipNoData(name))
+        }
+      })
+    // Fetch individual taxon
+
+    // return html data
+  }
+
   searchWildNetLocations(e) {
     if (e.target.dataset.taxonid === "") {
       return;
     }
     let taxonid = e.target.dataset.taxonid;
+    let event = e;
+    e.target.classList.add('show-loading');
+    let name = e.target.innerHTML;
     let _map = window.GLOBALMAP;
+    let _this = this;
     let searchresults;
     console.log(this);
     let url =`https://cors-anywhere.herokuapp.com/https://apps.des.qld.gov.au/species/?op=getsurveysbyspecies&min=2017-01-01&taxonid=${taxonid}`;
 
+    let spopup = new mapboxgl.Popup({
+      closeButton: false,
+      closeOnClick: false
+    });
+
     fetch(url, {headers: {'origin': 'http://localhost'}, mode:'cors'})
       .then(res => res.json())
       .then((result) => {
+        document.getElementsByClassName('show-loading')[0].classList.remove('show-loading');
         console.log(result);
         if (result.features.length > 0) {
           console.log(result);
@@ -193,6 +227,33 @@ class Map extends Component {
               }
             });
           }
+
+          _map.on("mouseenter", "searchresults", function (e) {
+            // Change the cursor style as a UI indicator.
+            this.getCanvas().style.cursor = 'pointer';
+            let coordinates = e.features[0].geometry.coordinates.slice();
+            let taxonid = e.features[0].properties.TaxonID;
+
+            // Ensure that if the map is zoomed out such that multiple
+            // copies of the feature are visible, the popup appears
+            // over the copy being pointed to.
+            while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+              coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+            }
+
+            // Populate the popup and set its coordinates
+            // based on the feature found.
+            spopup.setLngLat(coordinates)
+              .setHTML(`<span class="icon-name">${name}</span>`)
+              .addTo(_map);
+
+
+          });
+
+          _map.on('mouseleave', 'searchresults', function() {
+            _map.getCanvas().style.cursor = '';
+            spopup.remove();
+          });
 
         }
         else {

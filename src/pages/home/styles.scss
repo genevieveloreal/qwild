@@ -1,0 +1,38 @@
+#mapContainer {
+  position: relative;
+}
+
+.map-search {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  width: 350px;
+  max-height: 300px;
+  height: 300px;
+}
+
+.search-results {
+  .control {
+    overflow-y: auto;
+    overflow-x:hidden;
+    max-height: 190px;
+  }
+}
+
+.search-result-item {
+  text-transform: capitalize;
+  cursor: pointer;
+  padding:0 10px;
+  white-space: pre;
+
+  &:hover {
+    background: #ccc;
+  }
+}
+
+
+.reset-button {
+  position: absolute;
+  right:0;
+  z-index: 1000;
+}

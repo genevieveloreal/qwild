@@ -6,18 +6,9 @@ import KoalaData from "../../data/koalas_2018.geojson";
 import Icon from "../../data/icon.png";
 import KoalaIcon from "../../data/koala-icon-40px.png";
 import LoadingGif from "../../data/Double Ring-0.9s-45px.gif";
+import MapSearch from "../MapSearch";
 
 class Map extends Component {
-
-  state = {
-    viewport: {
-      width: "100%",
-      height: 400,
-      latitude: -28.0167,
-      longitude: 153.4000,
-      zoom: 8
-    }
-  };
 
   componentDidMount() {
     mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_API_TOKEN;
@@ -25,8 +16,10 @@ class Map extends Component {
       container: 'map',
       style: 'mapbox://styles/mapbox/light-v10',
       center: [153.4000, -28.0167],
-      zoom: 12
+      zoom: 8
     });
+
+    window.GLOBALMAP = this.map;
 
     this.drawData();
     this.drawKoalas();
@@ -162,6 +155,59 @@ class Map extends Component {
     // return html data
   }
 
+  searchWildNetLocations(e) {
+    if (e.target.dataset.taxonid === "") {
+      return;
+    }
+    let taxonid = e.target.dataset.taxonid;
+    let _map = window.GLOBALMAP;
+    let searchresults;
+    console.log(this);
+    let url =`https://cors-anywhere.herokuapp.com/https://apps.des.qld.gov.au/species/?op=getsurveysbyspecies&min=2017-01-01&taxonid=${taxonid}`;
+
+    fetch(url, {headers: {'origin': 'http://localhost'}, mode:'cors'})
+      .then(res => res.json())
+      .then((result) => {
+        console.log(result);
+        if (result.features.length > 0) {
+          console.log(result);
+          if (typeof _map.getSource('searchresults') === "undefined") {
+            _map.removeLayer('animals');
+            _map.removeLayer('koalas');
+            _map.removeSource('source_id');
+            _map.removeSource('koalas');
+            _map.addSource('searchresults', {type: 'geojson', data: result});
+          }
+          else {
+            _map.getSource('searchresults').setData(result);
+          }
+
+          if (typeof _map.getLayer('searchresults') === "undefined") {
+            //_map.removeLayer('searchresults');
+           searchresults = _map.addLayer({
+              "id":"searchresults",
+              "type":"symbol",
+              "source":"searchresults",
+              "layout": {
+                "icon-image":"marker-ico"
+              }
+            });
+          }
+
+        }
+        else {
+
+        }
+      })
+  }
+
+  resetMap(){
+    console.log('reset');
+    this.drawData();
+    this.drawKoalas()
+  }
+
+
   renderToolTip(species) {
 
     let endemic = species.Endemicity === "N" ? "Natural" : "Introduced";
@@ -217,7 +263,12 @@ class Map extends Component {
     };
 
     return (
-      <div style={style} id="map"></div>
+      <>
+        <div style={style} id="map"></div>
+        <MapSearch searchfunc={this.searchWildNetLocations}/>
+        <button onClick={this.resetMap.bind(this)} className={"reset-button"}>Reset Map</button>
+      </>
+
     );
   }
 }

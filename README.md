@@ -1,6 +1,42 @@
 # QWild
 
-React App in development - details TBC.
+QWild is a React App created as part of GovHack 2019.
+
+## Team Members
+Aaron Charlton | Team Captain, Web Developer
+Ivan von Christ | UX/UI Designer
+Genevieve Carter | Web Developer
+
+## Project Description
+Wildlife across Queensland and Australia are faced with numerous threats, both environmental and man-made. It is a harsh reality that if action is not taken, we risk some species becoming threatened or extinct. Queensland is known for its variety of wildlife. With temperatures increasing and 60% of Queensland in drought, local wildlife volunteer groups come under strain, especially when some calls could be avoided if people had the right information. QWild aims to educate people on local wildlife in their area, help residents connect with their local environment and provide care instructions & contact numbers if they come across an injured animal.
+
+QWild will encourage residents to learn more about the world around them and the species of wildlife that they share their backyards with, creating a greater sense of understanding and empathy. By providing an interactive experience, it will help foster appreciation for long term protection and conservation of the environment, both now and into the future.
+
+## Features
+* Interactive Wildlife Map
+* Augmented Reality (AR) prototype
+* Injured animal FAQ
+* Indigenous animal name translator
+* Animal Sighting Report form
+
+## Challenges Nominated
+* Queensland OpenAPI (National)
+* Thrive or survive: how can we adapt for the future? (National)
+* Optimise energy and water resource planning (National)
+* Environment and Science Data (Regional: Queensland)
+* Indigenous Languages (Regional: Queensland)
+* The best use of Gold Coast Data (Regional: Queensland)
+
+## Data Used
+* [City of Gold Coast - Fauna](http://data-goldcoast.opendata.arcgis.com/datasets/03919217b4824ecabb7b5828532f86d1_0)
+* [Queensland Government Open Data - SLQ Indigenous Languages Word Lists, Brisbane Animal Words](https://www.data.qld.gov.au/dataset/slq-aboriginal-languages-word-lists/resource/ebd00c34-d5d1-4266-8f6b-d9424104a307)
+* [Queensland Government Open Data - WildNet Koala Locations](https://www.data.qld.gov.au/dataset/wildnet-koala-locations)
+* [Queensland Government Open Data - QLD Wildlife Data API](https://www.data.qld.gov.au/dataset/qld-wildlife-data-api)
+
+# Technical Information
+
+## AR Demo
+Please note that the AR Demo for this project is located in [this repo](https://ivanvonchrist.github.com/ar-demo)
 
 ## Available Scripts
 

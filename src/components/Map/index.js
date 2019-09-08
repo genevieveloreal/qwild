@@ -16,7 +16,7 @@ class Map extends Component {
       container: 'map',
       style: 'mapbox://styles/mapbox/light-v10',
       center: [153.4000, -28.0167],
-      zoom: 12
+      zoom: 8
     });
 
     window.GLOBALMAP = this.map;

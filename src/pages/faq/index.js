@@ -7,7 +7,7 @@ function FaqPage(props) {
     <FaqSection
       color="white"
       size="medium"
-      title="Frequently Asked Questions"
+      title="About QWild"
       subtitle=""
     />
   );

@@ -35,7 +35,7 @@ function HomePage(props) {
         color="white"
         size="medium"
         title="Report a wildlife sighting"
-        subtitle="Spotted wildlife in your area? Let us know & help us maintain accurate data"
+        subtitle="Spotted wildlife in your area? Let us know & help us maintain accurate data. Please include a clear description of the animal, as well as the nearest address."
         showNameField={true}
         buttonText="Lodge Wildlife Report"
       />

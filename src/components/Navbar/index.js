@@ -50,12 +50,18 @@ function Navbar(props) {
                 </div>
               </div>
             )}
-
-            {!auth.user && (
-              <Link className="navbar-item" to="/signin">
-                Sign in
-              </Link>
-            )}
+            <Link className="navbar-item" to="/faq">
+              About
+            </Link>
+            <Link className="navbar-item" to="/faq-animal">
+              Injured Animal Info
+            </Link>
+            <a className="navbar-item" href="https://ivanvonchrist.github.io/ar-demo">
+              QWild Card Scanner
+            </a>
+            <Link className="navbar-item contact-button" to="/contact">
+              Contact Us
+            </Link>
           </div>
         </div>
       </div>

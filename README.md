@@ -3,9 +3,9 @@
 QWild is a React App created as part of GovHack 2019.
 
 ## Team Members
-Aaron Charlton | Team Captain, Web Developer
-Ivan von Christ | UX/UI Designer
-Genevieve Carter | Web Developer
+* Aaron Charlton | Team Captain, Web Developer
+* Ivan von Christ | UX/UI Designer
+* Genevieve Carter | Web Developer
 
 ## Project Description
 Wildlife across Queensland and Australia are faced with numerous threats, both environmental and man-made. It is a harsh reality that if action is not taken, we risk some species becoming threatened or extinct. Queensland is known for its variety of wildlife. With temperatures increasing and 60% of Queensland in drought, local wildlife volunteer groups come under strain, especially when some calls could be avoided if people had the right information. QWild aims to educate people on local wildlife in their area, help residents connect with their local environment and provide care instructions & contact numbers if they come across an injured animal.

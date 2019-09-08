@@ -203,7 +203,7 @@ class Map extends Component {
       .then((result) => {
         document.getElementsByClassName('show-loading')[0].classList.remove('show-loading');
         console.log(result);
-        if (result.features.length > 0) {
+        if ( result.features && result.features.length > 0) {
           console.log(result);
           if (typeof _map.getSource('searchresults') === "undefined") {
             _map.removeLayer('animals');

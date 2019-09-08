@@ -16,7 +16,6 @@ function HomePage(props) {
     <>
       <div id={"mapContainer"}>
         <Map/>
-        <MapSearch/>
       </div>
       <ClientsSection color="light" size="normal" title="" subtitle="" />
       <TeamBiosSection2

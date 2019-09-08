@@ -13,13 +13,10 @@ class MapSearchItem extends Component {
   }
 
   render(){
-
-    return
-    (
-      <div className="map-search-item">
-        {this.props.name}
-      </div>
+    return(
+      <li>Chicken Mitten</li>
     )
+
   }
 
 

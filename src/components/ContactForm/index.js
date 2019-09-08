@@ -9,6 +9,7 @@ function ContactForm(props) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const isLodged = useState(false);
 
   // Whether to show errors
   // We set to true if they submit and there are errors.
@@ -79,7 +80,9 @@ function ContactForm(props) {
       <form
         onSubmit={e => {
           e.preventDefault();
-          handleSubmit();
+          // handleSubmit();
+          const submittedMessage = document.getElementById("submitted");
+          submittedMessage.setAttribute("style", "display: initial;");
         }}
       >
         <div className="field is-horizontal">
@@ -129,6 +132,11 @@ function ContactForm(props) {
                 >
                   {props.buttonText}
                 </SectionButton>
+                  <div class="submitted-message">
+                    <p id="submitted">
+                      Thank you for lodging your Wildlife Sighting Report. Your data is with our staff for verification.
+                    </p>
+                  </div>
               </div>
             </div>
           </div>

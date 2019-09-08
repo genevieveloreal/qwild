@@ -3,7 +3,8 @@ import Navbar from "./../../components/Navbar";
 import HomePage from "./../home";
 import ARDemo from "./../ar-demo";
 import FaqPage from "./../faq";
-import PricingPage from "./../pricing";
+import FaqAnimal from "./../faqanimal";
+// import PricingPage from "./../pricing";
 import ContactPage from "./../contact";
 import DashboardPage from "./../dashboard";
 import SigninPage from "./../signin";
@@ -36,7 +37,9 @@ function App(props) {
 
             <Route exact path="/faq" component={FaqPage} />
 
-            <Route exact path="/pricing" component={PricingPage} />
+            <Route exact path="/faq-animal" component={FaqAnimal} />
+
+            {/* <Route exact path="/pricing" component={PricingPage} /> */}
 
             <Route exact path="/contact" component={ContactPage} />
 

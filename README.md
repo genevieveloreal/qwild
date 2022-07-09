@@ -1,7 +1,7 @@
 # QWild
 
 QWild is a React App created as part of GovHack 2019. 
-[View on Hackerspace here](https://hackerspace.govhack.org/projects/qwild)
+[View on Hackerspace here](https://2019.hackerspace.govhack.org/projects/qwild)
 
 
 ## Team Members

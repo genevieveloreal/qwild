@@ -12,7 +12,7 @@
     "body-parser": "1.19.0",
     "bulma": "0.7.5",
     "debounce": "^1.2.0",
-    "express": "4.17.1",
+    "express": "4.17.3",
     "firebase": "6.3.5",
     "immutable": "^4.0.0-rc.12",
     "loadash": "^1.0.0",
